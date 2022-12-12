@@ -45,7 +45,7 @@ public class AddMember extends javax.swing.JPanel  {
         txtEmail = new javax.swing.JTextField();
         btnAddMember = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButtonClose = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(35, 40, 61));
@@ -160,15 +160,15 @@ public class AddMember extends javax.swing.JPanel  {
 
         jPanel2.setBackground(new java.awt.Color(17, 21, 38));
 
-        jButtonClose.setBackground(new java.awt.Color(15, 19, 35));
-        jButtonClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-multiply-48 1.png"))); // NOI18N
-        jButtonClose.setBorder(null);
-        jButtonClose.setBorderPainted(false);
-        jButtonClose.setContentAreaFilled(false);
-        jButtonClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(15, 19, 35));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close icon.png"))); // NOI18N
+        btnExit.setBorder(null);
+        btnExit.setBorderPainted(false);
+        btnExit.setContentAreaFilled(false);
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCloseActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -184,7 +184,7 @@ public class AddMember extends javax.swing.JPanel  {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(jButtonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
         jPanel2Layout.setVerticalGroup(
@@ -193,7 +193,7 @@ public class AddMember extends javax.swing.JPanel  {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -230,10 +230,10 @@ public class AddMember extends javax.swing.JPanel  {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
-//        System.out.println("Closed!");
-//        jPanel1.setVisible(false);
-    }//GEN-LAST:event_jButtonCloseActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.out.println("Closed!");
+        jPanel1.setVisible(false);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMemberActionPerformed
         try {
@@ -291,7 +291,7 @@ public class AddMember extends javax.swing.JPanel  {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddMember;
-    private javax.swing.JButton jButtonClose;
+    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

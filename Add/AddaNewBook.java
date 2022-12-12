@@ -50,7 +50,7 @@ public class AddaNewBook extends javax.swing.JPanel {
         txtGenre = new javax.swing.JTextField();
         jButtonAdd = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jButtonClose = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(35, 40, 61));
@@ -168,15 +168,15 @@ public class AddaNewBook extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(17, 21, 38));
 
-        jButtonClose.setBackground(new java.awt.Color(15, 19, 35));
-        jButtonClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-multiply-48 1.png"))); // NOI18N
-        jButtonClose.setBorder(null);
-        jButtonClose.setBorderPainted(false);
-        jButtonClose.setContentAreaFilled(false);
-        jButtonClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtonClose.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(15, 19, 35));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close icon.png"))); // NOI18N
+        btnExit.setBorder(null);
+        btnExit.setBorderPainted(false);
+        btnExit.setContentAreaFilled(false);
+        btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCloseActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -192,7 +192,7 @@ public class AddaNewBook extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addComponent(jButtonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
         jPanel2Layout.setVerticalGroup(
@@ -201,7 +201,7 @@ public class AddaNewBook extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -234,7 +234,7 @@ public class AddaNewBook extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleParent(this);
@@ -293,17 +293,15 @@ public class AddaNewBook extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonAddActionPerformed
 
-    private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
-        
-
-//System.out.println("Closed!");
-        //jPanel1.setVisible(false);
-    }//GEN-LAST:event_jButtonCloseActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.out.println("Closed!");
+        jPanel1.setVisible(false);
+    }//GEN-LAST:event_btnExitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton jButtonAdd;
-    private javax.swing.JButton jButtonClose;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
