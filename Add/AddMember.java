@@ -1,14 +1,14 @@
-
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+public class AddMember extends javax.swing.JFrame {
 
-public class AddMember extends javax.swing.JPanel  {
-    
+    /**
+     * Creates new form AddMember
+     */
     public AddMember() {
         initComponents();
-        setOpaque(false);
         Connect();
     }
     
@@ -22,11 +22,9 @@ public class AddMember extends javax.swing.JPanel  {
             con = DriverManager.getConnection("jdbc:mysql://localhost/library_db","root","");
             
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(AddaNewBook.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddMember.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -44,11 +42,14 @@ public class AddMember extends javax.swing.JPanel  {
         jLabel6 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnAddMember = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        Movepanel = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(35, 40, 61));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel1.setAutoscrolls(true);
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -158,7 +159,17 @@ public class AddMember extends javax.swing.JPanel  {
                 .addGap(23, 23, 23))
         );
 
-        jPanel2.setBackground(new java.awt.Color(17, 21, 38));
+        Movepanel.setBackground(new java.awt.Color(17, 21, 38));
+        Movepanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                MovepanelMouseDragged(evt);
+            }
+        });
+        Movepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MovepanelMousePressed(evt);
+            }
+        });
 
         btnExit.setBackground(new java.awt.Color(15, 19, 35));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close icon.png"))); // NOI18N
@@ -176,22 +187,22 @@ public class AddMember extends javax.swing.JPanel  {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Add Member");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout MovepanelLayout = new javax.swing.GroupLayout(Movepanel);
+        Movepanel.setLayout(MovepanelLayout);
+        MovepanelLayout.setHorizontalGroup(
+            MovepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MovepanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        MovepanelLayout.setVerticalGroup(
+            MovepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MovepanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(MovepanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
@@ -204,22 +215,22 @@ public class AddMember extends javax.swing.JPanel  {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Movepanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Movepanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
@@ -228,30 +239,68 @@ public class AddMember extends javax.swing.JPanel  {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
         );
+
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.out.println("Closed!");
-        jPanel1.setVisible(false);
-    }//GEN-LAST:event_btnExitActionPerformed
+    private void txtFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFnameActionPerformed
+
+    private void txtLnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLnameActionPerformed
+
+    private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneActionPerformed
+
+    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGenderActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnAddMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMemberActionPerformed
+        if ( txtFname.getText().trim().length() == 0 ) {
+            JOptionPane.showMessageDialog(this, "Insert a First Name!!");
+            return;
+        }
+        else if ( txtLname.getText().trim().length() == 0 ) {
+            JOptionPane.showMessageDialog(this, "Insert a Last Name!!");
+            return;
+        }
+        else if ( txtPhone.getText().trim().length() == 0 ) {
+            JOptionPane.showMessageDialog(this, "Insert a Phone Number!!");
+            return;
+        }
+        else if ( txtEmail.getText().trim().length() == 0 ) {
+            JOptionPane.showMessageDialog(this, "Insert an Email Address!!");
+            return;
+        }
+        else if ( txtGender.getText().trim().length() == 0 ) {
+            JOptionPane.showMessageDialog(this, "Insert a Gender!!");
+            return;
+        }
         try {
             String Fname = txtFname.getText();
             String Lname = txtLname.getText();
             String Phone = txtPhone.getText();
             String Email = txtEmail.getText();
             String Gender = txtGender.getText();
-            
+
             pst = con.prepareStatement("INSERT INTO member (Fname, Lname, Phone, Email, Gender) VALUES(?,?,?,?,?)");
             pst.setString(1,Fname);
             pst.setString(2,Lname);
             pst.setString(3,Phone);
             pst.setString(4,Email);
             pst.setString(5,Gender);
-            
+
             int k = pst.executeUpdate();
-            
+
             if (k==1) {
                 JOptionPane.showMessageDialog(this, "Record Added Successfully!!");
                 txtFname.setText("");
@@ -263,33 +312,61 @@ public class AddMember extends javax.swing.JPanel  {
             else {
                 JOptionPane.showMessageDialog(this, "Record Failed to Saved!!");
             }
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             Logger.getLogger(AddMember.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAddMemberActionPerformed
 
-    private void txtLnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLnameActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnExitActionPerformed
+    private int xMouse, yMouse;
+    private void MovepanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MovepanelMouseDragged
+        int x=evt.getXOnScreen();
+        int y=evt.getYOnScreen();
+        setLocation(x-xMouse,y-yMouse);
+    }//GEN-LAST:event_MovepanelMouseDragged
 
-    private void txtFnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFnameActionPerformed
+    private void MovepanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MovepanelMousePressed
+        xMouse=evt.getX();
+        yMouse=evt.getY();
+    }//GEN-LAST:event_MovepanelMousePressed
 
-    private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneActionPerformed
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AddMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AddMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AddMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AddMember.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
-
-    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGenderActionPerformed
-
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AddMember().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Movepanel;
     private javax.swing.JButton btnAddMember;
     private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
@@ -299,7 +376,6 @@ public class AddMember extends javax.swing.JPanel  {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFname;
